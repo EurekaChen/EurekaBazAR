@@ -42,8 +42,20 @@ RealityEntitiesStatic = {
         Position = { 16, 43 },
         Type = 'Avatar',
         Metadata = {
-            DisplayName = 'Giver|赠币',
+            DisplayName = 'Legacy Giver|赠币',
             SkinNumber = 2,
+            Interaction = {
+                Type = 'SchemaForm',
+                Id = 'GetDonation',
+            },
+        },
+    },
+    ['Ru9kMtDMQ9bJrlZQ9TItoWUm9ejGOonXiJV3D6fm4ko'] = {
+        Position = { 7, 46 },
+        Type = 'Avatar',
+        Metadata = {
+            DisplayName = 'Giver|赠币',
+            SpriteTxId = 'zBZ2EZa_XKx_IZhlRAofkjXnm7zfAOznrUU3QO_ILLU',
             Interaction = {
                 Type = 'SchemaForm',
                 Id = 'GetDonation',

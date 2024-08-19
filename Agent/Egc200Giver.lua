@@ -1,5 +1,4 @@
 -- ProcessName: Egc200Giver
--- aos Egc200Giver --module=GYrbbe0VbHim_7Hi6zrOpHQXrSQz07XNtwCnfbFo2I0 --wallet="E:\Current\Life\Secret\wallet\arweave.general.TTe0.json"
 -- ProcessId: Ru9kMtDMQ9bJrlZQ9TItoWUm9ejGOonXiJV3D6fm4ko
 
 local json = require('json')
@@ -8,11 +7,11 @@ local sqlite3 = require('lsqlite3')
 EGC_TOKEN_PROCESS = 'JsroQVXlDCD9Ansr-n45SrTTB2LwqX_X6jDeaGiIHMo'
 EGC_TOKEN_DENOMINATION = 2
 EGC_TOKEN_MULTIPLIER = 10 ^ EGC_TOKEN_DENOMINATION
-EGC_DONATION_SIZE_WHOLE = 50
+EGC_DONATION_SIZE_WHOLE = 200
 EGC_DONATION_SIZE_QUANTITY = math.floor(EGC_DONATION_SIZE_WHOLE * EGC_TOKEN_MULTIPLIER)
 
--- RPG Land
-CHAT_TARGET = "eAO-MQi0PKeZkGPbvu7QAKSzk8Sy0Hqo18Mqj8H1RdU"
+-- ebazar
+CHAT_TARGET = "Vv3Ir98X_BnU48JJCnpyKRmKmjOBrqiVUkUqaoqMX_c"
 
 GiverDb = GiverDb or sqlite3.open_memory()
 GiverDbAdmin = GiverDbAdmin or require('DbAdmin').new(GiverDb)
@@ -55,7 +54,7 @@ OUT_OF_EGC = OUT_OF_EGC or false
 
 Handlers.add(
   "OutOfEgc",
-  Handlers.utils.hasMatchingTag("Error", "Insufficient Balance!"),
+  Handlers.utils.hasMatchingTag("Error", "Insufficient EGC|EGC余额不足!"),
   function(msg)
     if (msg.From ~= EGC_TOKEN_PROCESS) then
       return
@@ -69,14 +68,14 @@ Handlers.add(
       WHERE WalletId = '%s'
     ]], sender))
 
-    -- Write in chat
+    -- 信息发送到聊天中
     Send({
       Target = CHAT_TARGET,
       Tags = {
         Action = 'ChatMessage',
-        ['Author-Name'] = 'EGC Giver',
+        ['Author-Name'] = 'EGC Giver|赠送',
       },
-      Data = "Well this is embarassing... I seem to be out of $EGC. Come back again later.",
+      Data = "I seem to be out of EGC. Come back again later.|对不起，我的EGC花光了，请下次再来。",
     })
 
     OUT_OF_EGC = true
@@ -91,7 +90,7 @@ Handlers.add(
       return
     end
 
-    print("Recieved " .. msg.Tags.Quantity .. " $EGC")
+    print("收到" .. msg.Tags.Quantity .. " EGC")
 
     if (not OUT_OF_EGC) then
       return
@@ -102,9 +101,9 @@ Handlers.add(
       Target = CHAT_TARGET,
       Tags = {
         Action = 'ChatMessage',
-        ['Author-Name'] = 'EGC Giver',
+        ['Author-Name'] = 'EGC Giver|赠送',
       },
-      Data = "I have more $EGC to give! My generosity knows no bounds!",
+      Data = "I have more EGC to give! | 我有EGC了！",
     })
 
     OUT_OF_EGC = false
@@ -126,10 +125,10 @@ Handlers.add(
         Target = CHAT_TARGET,
         Tags = {
           Action = 'ChatMessage',
-          ['Author-Name'] = 'EGC Giver',
+          ['Author-Name'] = 'EGC Giver|赠送',
           Recipient = sender,
         },
-        Data = "Hey, I think I rememember you! Now now, don't be greedy...",
+        Data = "I rememember you! You can get more from someone else. | 我记得你已经在我这里领过EGC了，你可以到其他人那里再试试！",
       })
       return
     end
@@ -140,7 +139,7 @@ Handlers.add(
       VALUES ('%s', %d)
     ]], sender, msg.Timestamp))
 
-    -- Write in Chat
+    -- 写到聊天中
     Send({
       Target = CHAT_TARGET,
       Tags = {
@@ -148,8 +147,11 @@ Handlers.add(
         ['Author-Name'] = 'EGC Giver',
         Recipient = sender,
       },
-      Data = "By my boundless grace, I shall bestow upon you the generous sum of " ..
-          FormatEgcTokenAmount(EGC_DONATION_SIZE_QUANTITY) .. " $EGC."
+      Data = "I shall bestow upon you the generous sum of " ..
+          FormatEgcTokenAmount(EGC_DONATION_SIZE_QUANTITY) ..
+          " EGC." ..
+          "!|我会慷慨的送给你" .. FormatEgcTokenAmount(EGC_DONATION_SIZE_QUANTITY) ..
+          " EGC ,请查看你的钱包"
     })
 
     -- Grant EGC Coin
@@ -188,7 +190,7 @@ Handlers.add(
   Handlers.utils.hasMatchingTag('Action', 'Schema'),
   function(msg)
     print('Schema')
-    -- Query the database to see if the account has donated
+    -- 查看数据库，看是否账号已经送出过EGC
     local walletId = msg.From
 
     if (OUT_OF_EGC) then
@@ -197,8 +199,8 @@ Handlers.add(
         Tags = { Type = 'Schema' },
         Data = json.encode({
           GetDonation = {
-            Title = "Well, this is embarassing...",
-            Description = "I was so generous today that I ran out of $EGC! Come back later.",
+            Title = "This is embarassing|不好意思",
+            Description = "I was so generous today that I ran out of EGC! | 今天我把EGC都送光了",
             Schema = nil,
           },
         })
@@ -214,8 +216,8 @@ Handlers.add(
         Tags = { Type = 'Schema' },
         Data = json.encode({
           GetDonation = {
-            Title = "You have already received your donation!",
-            Description = "I'm not made of $EGC you know...",
+            Title = "You have already received your EGC from here!|您已经在我这里拿过EGC了！",
+            Description = "You can try getting more EGC from others | 我已经从我这里拿过EGC了哦，你可以试试从其他人那里拿更多的EGC",
             Schema = nil,
           },
         })
@@ -228,8 +230,8 @@ Handlers.add(
       Tags = { Type = 'Schema' },
       Data = json.encode({
         GetDonation = {
-          Title = "Well done for finding me!",
-          Description = "You have found the EGC Giver. Click below to recieve a small donation.",
+          Title = "Lucky for finding me! | 遇到我真幸运！",
+          Description = "You have found me. Click below to recieve 200 EGC.|这是上辈子修来的福份，点击一下就能收到我送给你的200EGC。",
           Schema = {
             Tags = json.decode(GetDonationSchemaTags()),
             -- Data
