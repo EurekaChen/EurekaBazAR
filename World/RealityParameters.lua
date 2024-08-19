@@ -1,21 +1,24 @@
 RealityParameters = {
     ['2D-Tile-0'] = {
         Version = 0,
-        Spawn = { 19, 43 },        
+        Spawn = { 19, 43 },
+        -- This is a tileset themed to Llama Land main island
         Tileset = {
             Type = 'Fixed',
             Format = 'PNG',
-            TxId = '-hNtDp4rgV22Vm8Vz0Qs17cmQILVN7xuOVirZqmIINg', --Primary.png
+            TxId = '-hNtDp4rgV22Vm8Vz0Qs17cmQILVN7xuOVirZqmIINg', -- TxId of the tileset in PNG format
         },
-        -- Eureka BazAR tilemap
+        -- This is a tilemap of sample small island
         Tilemap = {
             Type = 'Fixed',
-            Format = 'TMJ',            
+            Format = 'TMJ',
+            --TxId = 'F_umaBTvn4dQ2QazA4TPUHnZwCULCxip-ATXJtve-M0',
             TxId = 'Jj4Asvoh4LVQ_eA2q0uXxwqo380B8NIYPxmwI2yqCsw',
-            -- 已经居中设置，所以不再设置Offset
+            --TxId = 'exzF9fmG0SvsUcAyWJ0AP4Eawn07Xlk5orAVAyZRKkg', -- TxId of the tilemap in TMJ format
+            -- Since we are already setting the spawn in the middle, we don't need this
             -- Offset = { -10, -10 },
         },
-        PlayerSpriteTxId = 'v47hvsNy8AFAKzKgqRT0UefRS1ibTu4tmhXrT_pSmMc' -- WalkBoy.png
+        PlayerSpriteTxId = 'v47hvsNy8AFAKzKgqRT0UefRS1ibTu4tmhXrT_pSmMc'
     },
     ['Audio-0'] = {
         Bgm = {
