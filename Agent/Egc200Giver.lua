@@ -4,7 +4,7 @@
 local json = require('json')
 local sqlite3 = require('lsqlite3')
 
-EGC_TOKEN_PROCESS = 'JsroQVXlDCD9Ansr-n45SrTTB2LwqX_X6jDeaGiIHMo'
+EgcTokenPid = 'JsroQVXlDCD9Ansr-n45SrTTB2LwqX_X6jDeaGiIHMo'
 EGC_TOKEN_DENOMINATION = 2
 EGC_TOKEN_MULTIPLIER = 10 ^ EGC_TOKEN_DENOMINATION
 EGC_DONATION_SIZE_WHOLE = 200
@@ -50,13 +50,13 @@ function HasAlreadyDonated(walletId)
   return false
 end
 
-OUT_OF_EGC = OUT_OF_EGC or false
+OutOfEgc = OutOfEgc or false
 
 Handlers.add(
   "OutOfEgc",
   Handlers.utils.hasMatchingTag("Error", "Insufficient EGC|EGC余额不足!"),
   function(msg)
-    if (msg.From ~= EGC_TOKEN_PROCESS) then
+    if (msg.From ~= EgcTokenPid) then
       return
     end
 
@@ -78,7 +78,7 @@ Handlers.add(
       Data = "I seem to be out of EGC. Come back again later.|对不起，我的EGC花光了，请下次再来。",
     })
 
-    OUT_OF_EGC = true
+    OutOfEgc = true
   end
 )
 
@@ -86,13 +86,13 @@ Handlers.add(
   "MoreEGC",
   Handlers.utils.hasMatchingTag("Action", "Credit-Notice"),
   function(msg)
-    if (msg.From ~= EGC_TOKEN_PROCESS) then
+    if (msg.From ~= EgcTokenPid) then
       return
     end
 
     print("收到" .. msg.Tags.Quantity .. " EGC")
 
-    if (not OUT_OF_EGC) then
+    if (not OutOfEgc) then
       return
     end
 
@@ -106,7 +106,7 @@ Handlers.add(
       Data = "I have more EGC to give! | 我有EGC了！",
     })
 
-    OUT_OF_EGC = false
+    OutOfEgc = false
   end
 )
 
@@ -128,7 +128,7 @@ Handlers.add(
           ['Author-Name'] = 'EGC Giver|赠送',
           Recipient = sender,
         },
-        Data = "I rememember you! You can get more from someone else. | 我记得你已经在我这里领过EGC了，你可以到其他人那里再试试！",
+        Data = "I rememember you! You can get more from someone else. | 我记得您已经在我这里领过币了，您可以到其他人那里再试试！",
       })
       return
     end
@@ -156,7 +156,7 @@ Handlers.add(
 
     -- Grant EGC Coin
     Send({
-      Target = EGC_TOKEN_PROCESS,
+      Target = EgcTokenPid,
       Tags = {
         Action = 'Transfer',
         Recipient = sender,
@@ -168,7 +168,7 @@ Handlers.add(
 
 -- Schema
 
-function GetDonationSchemaTags()
+function GetFaucetSchemaTags()
   return [[
 {
 "type": "object",
@@ -193,7 +193,7 @@ Handlers.add(
     -- 查看数据库，看是否账号已经送出过EGC
     local walletId = msg.From
 
-    if (OUT_OF_EGC) then
+    if (OutOfEgc) then
       Send({
         Target = walletId,
         Tags = { Type = 'Schema' },
@@ -217,7 +217,7 @@ Handlers.add(
         Data = json.encode({
           GetDonation = {
             Title = "You have already received your EGC from here!|您已经在我这里拿过EGC了！",
-            Description = "You can try getting more EGC from others | 我已经从我这里拿过EGC了哦，你可以试试从其他人那里拿更多的EGC",
+            Description = "You can try getting more EGC from others | 您已经从我这里拿过EGC了哦，你可以试试从其他人那里拿更多的EGC",
             Schema = nil,
           },
         })
@@ -233,7 +233,7 @@ Handlers.add(
           Title = "Lucky for finding me! | 遇到我真幸运！",
           Description = "You have found me. Click below to recieve 200 EGC.|这是上辈子修来的福份，点击一下就能收到我送给你的200EGC。",
           Schema = {
-            Tags = json.decode(GetDonationSchemaTags()),
+            Tags = json.decode(GetFaucetSchemaTags()),
             -- Data
             -- Result?
           },

@@ -59,5 +59,17 @@ RealityEntitiesStatic = {
                 Id = 'GetDonation',
             },
         },
+    },
+    ['xWbBJaDc5It_iQH3CIvE6nos7fT8fNovig7nXg0fhMU'] = {
+        Position = { 23, 33 },
+        Type = 'Avatar',
+        Metadata = {
+            DisplayName = "BlackJack|21点",
+            SpriteTxId = 'sfd6xuVX0QHhxcgWTzYtaeWfIl2z2WpWFtg3tK2dYV4',
+            Interaction = {
+                Type = "SchemaExternalForm",
+                Id = "BlackJack",
+            }
+        }
     }
 }
