@@ -11,17 +11,27 @@ RealityEntitiesStatic = {
         Type = 'Avatar',
         Position = { 22, 44 },
         Metadata = {
-            DisplayName = 'Info|信息',
+            DisplayName = 'Ticket|售票',
             SpriteTxId = 'V0-MU_zRr1W5DMHe4VJGGP9xxBNhceolViTKLSQG7Ik',
         },
     },
-    ['jcSGf0uhLDuQ3Ftl6iBmgSsx5Zl61mvYYq-7VkwzRVU'] = {
+    ['dOBu-dVlJtqMHN9_2beZ9J2lfSV0gmvqWkbx1sZwRlg'] = {
+        Position = { 13, 36 },
+        Type = 'Avatar',
+        Metadata = {
+            DisplayName = 'Morpheus|墨菲斯',
+            SpriteTxId = '9XHy0pepYiAELKbP9eTHcby8Ft4lVP2qWUVfwYmoLnI',            
+            Interaction = {
+                Type = 'Default',
+            },
+        },
+    },
+    ['nRHXKlVg1-il7PH6u9Z0X4chPKLvLNCKw00GlkYF8cc'] = {
         Position = { 28, 33 },
         Type = 'Avatar',
         Metadata = {
-            DisplayName = 'Seller|销售',
-            SpriteTxId = 'MciyuI-s0xM1s_U7fMCfprHEGe1-W1mSaO7OuwNP-NY',
-            SkinNumber = 5,
+            DisplayName = 'GiverGuide|赠币向导',
+            SpriteTxId = 'MciyuI-s0xM1s_U7fMCfprHEGe1-W1mSaO7OuwNP-NY',            
             Interaction = {
                 Type = 'Default',
             },
@@ -37,19 +47,7 @@ RealityEntitiesStatic = {
                 Type = 'Default',
             },
         },
-    },
-    ['Q7dQ0Ai2UJTdy8dHd8R3QmnyZEHqCyjZ5enkDWwClao'] = {
-        Position = { 16, 43 },
-        Type = 'Avatar',
-        Metadata = {
-            DisplayName = 'Legacy Giver|赠币',
-            SkinNumber = 2,
-            Interaction = {
-                Type = 'SchemaForm',
-                Id = 'GetDonation',
-            },
-        },
-    },
+    },    
     ['Ru9kMtDMQ9bJrlZQ9TItoWUm9ejGOonXiJV3D6fm4ko'] = {
         Position = { 7, 46 },
         Type = 'Avatar',

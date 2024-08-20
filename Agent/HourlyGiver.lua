@@ -1,5 +1,5 @@
--- ProcessName: Egc200Giver
--- ProcessId: Ru9kMtDMQ9bJrlZQ9TItoWUm9ejGOonXiJV3D6fm4ko
+-- ProcessName: HourlyGiver
+-- ProcessId: 
 
 local json = require('json')
 local sqlite3 = require('lsqlite3')
@@ -7,7 +7,7 @@ local sqlite3 = require('lsqlite3')
 EGC_TOKEN_PROCESS = 'JsroQVXlDCD9Ansr-n45SrTTB2LwqX_X6jDeaGiIHMo'
 EGC_TOKEN_DENOMINATION = 2
 EGC_TOKEN_MULTIPLIER = 10 ^ EGC_TOKEN_DENOMINATION
-EGC_DONATION_SIZE_WHOLE = 200
+EGC_DONATION_SIZE_WHOLE = 0.5
 EGC_DONATION_SIZE_QUANTITY = math.floor(EGC_DONATION_SIZE_WHOLE * EGC_TOKEN_MULTIPLIER)
 
 -- ebazar
