@@ -6,17 +6,13 @@ RealityParameters = {
         Tileset = {
             Type = 'Fixed',
             Format = 'PNG',
-            TxId = '-hNtDp4rgV22Vm8Vz0Qs17cmQILVN7xuOVirZqmIINg', -- TxId of the tileset in PNG format
+            TxId = 'xTqrNKwK0kC7mQPnsswY3Ox2x8f3NI1MHnTlJbW3264', -- TxId of the tileset in PNG format
         },
         -- This is a tilemap of sample small island
         Tilemap = {
             Type = 'Fixed',
             Format = 'TMJ',
-            --TxId = 'F_umaBTvn4dQ2QazA4TPUHnZwCULCxip-ATXJtve-M0',
-            TxId = 'Jj4Asvoh4LVQ_eA2q0uXxwqo380B8NIYPxmwI2yqCsw',
-            --TxId = 'exzF9fmG0SvsUcAyWJ0AP4Eawn07Xlk5orAVAyZRKkg', -- TxId of the tilemap in TMJ format
-            -- Since we are already setting the spawn in the middle, we don't need this
-            -- Offset = { -10, -10 },
+            TxId = 'PLeEm7VT2EDrnc-d6d3-OH1UcxWNa9lBzdUs4EGRcRY',
         },
         PlayerSpriteTxId = 'v47hvsNy8AFAKzKgqRT0UefRS1ibTu4tmhXrT_pSmMc'
     },
