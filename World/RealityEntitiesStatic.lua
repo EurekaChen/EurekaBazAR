@@ -83,5 +83,29 @@ RealityEntitiesStatic = {
                 Id = "BlackJack",
             }
         }
+    },
+    ['ViH_QuAD0y8W8wHmY9YmWuRYfsHtkucQV2pQqrh2HKs'] = {
+        Position = { 4, 26 },
+        Type = 'Avatar',
+        Metadata = {
+            DisplayName = "LunarMan|月月佬",
+            SpriteTxId = 'wnJ9ofEDoJVpNVSL_kQdYIG-L_zM9vQDVsGRsOZE7Nk',
+            Interaction = {
+                Type = "SchemaForm",
+                Id = "GetFaucet",
+            }
+        }
+    },
+    ['sZWBG3jK2zqKQOM83T8yAZS7CWT9mC3L8EjCzI2C03Y'] = {
+        Position = { 57, 11 },
+        Type = 'Avatar',
+        Metadata = {
+            DisplayName = "Septnary|星君",
+            SpriteTxId = 'AHgyj91dYcNczjcjN2Dv5Ejz3mSZms1O48482WzIiZc',
+            Interaction = {
+                Type = "SchemaForm",
+                Id = "WeeklyFaucet",
+            }
+        }
     }
 }

@@ -294,7 +294,7 @@ Handlers.add(
       local chatMessage
 
       if not state.isHistoric then
-        chatMessage = truncatedAccount .. " current game status|当装游戏状态: " .. description
+        chatMessage = truncatedAccount .. " current game status|当前的游戏状态: " .. description
       else
         chatMessage = truncatedAccount .. " final state of last game|最后游戏状态: " .. description
       end
