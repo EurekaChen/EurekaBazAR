@@ -14,7 +14,7 @@ RealityParameters = {
             Format = 'TMJ',
             TxId = 'PLeEm7VT2EDrnc-d6d3-OH1UcxWNa9lBzdUs4EGRcRY',
         },
-        PlayerSpriteTxId = 'v47hvsNy8AFAKzKgqRT0UefRS1ibTu4tmhXrT_pSmMc'
+        PlayerSpriteTxId = 'Vz-aSCm6ULN6Sx7qq0pPGfuJQskYa5rRCW9q3vViPdo'
     },
     ['Audio-0'] = {
         Bgm = {
