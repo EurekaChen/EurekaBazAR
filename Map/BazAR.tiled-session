@@ -37,7 +37,27 @@
         "BazAR3.json#Primary": {
             "scaleInDock": 2
         },
+        "Casino.json": {
+            "scale": 2,
+            "selectedLayer": 10,
+            "viewCenter": {
+                "x": 187,
+                "y": 198.75
+            }
+        },
+        "Casino.json#Primary": {
+            "scaleInDock": 1.5
+        },
+        "EurekaBazAR2.json": {
+            "scale": 1.3903645833333333,
+            "selectedLayer": 9,
+            "viewCenter": {
+                "x": 479.7302865705188,
+                "y": 480.08990447649364
+            }
+        },
         "EurekaBazAR2.json#Primary": {
+            "scaleInDock": 1,
             "scaleInEditor": 1
         }
     },
