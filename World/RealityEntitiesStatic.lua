@@ -60,6 +60,18 @@ RealityEntitiesStatic = {
             },
         },
     },
+    ['kRi973TXQnuxZWMjVgdmDMighkIwmHDCguggBin0ul8'] = {
+        Position = { 40, 57 },
+        Type = 'Avatar',
+        Metadata = {
+            DisplayName = 'HourlyFaucet|时时送',
+            SpriteTxId = 'IihhPCRhU_vj4QgXv4DMdLnfbUlfVVinS3lJc1W4HR4',
+            Interaction = {
+                Type = 'SchemaForm',
+                Id = 'GetFaucet',
+            },
+        },
+    },
     ['xWbBJaDc5It_iQH3CIvE6nos7fT8fNovig7nXg0fhMU'] = {
         Position = { 23, 33 },
         Type = 'Avatar',

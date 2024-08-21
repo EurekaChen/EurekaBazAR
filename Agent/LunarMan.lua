@@ -1,13 +1,18 @@
--- ProcessName: HourlyFaucet
--- ProcessId:kRi973TXQnuxZWMjVgdmDMighkIwmHDCguggBin0ul8
+-- ProcessName: LunarMan
+-- ProcessId:
 
 local json = require('json')
 
 EgcTokenPid = 'JsroQVXlDCD9Ansr-n45SrTTB2LwqX_X6jDeaGiIHMo'
+
+FirstGift=168
+RegularGift=50
+
 EgcTokenDenomination = 2
 EgcTokenMultiplier = 10 ^ EgcTokenDenomination
-EgcFaucetSizeWhole = 1
-EgcFaucetSizeQuantity = math.floor(EgcFaucetSizeWhole * EgcTokenMultiplier)
+
+FirstGiftQuantity = math.floor(FirstGift * EgcTokenMultiplier)
+RegularGiftQuantity = math.floor(RegularGift * EgcTokenMultiplier)
 
 -- ebazar
 ChatTarget = "Vv3Ir98X_BnU48JJCnpyKRmKmjOBrqiVUkUqaoqMX_c"
@@ -16,10 +21,6 @@ ChatTarget = "Vv3Ir98X_BnU48JJCnpyKRmKmjOBrqiVUkUqaoqMX_c"
 -- Faucets={"WalletId"={total=0,lastTimestamp=0},"WalletId2"={total=0,lastTimestamp=0}}
 Faucets = Faucets or {}
 
-function FormatEgcTokenAmount(quantity)
-  return string.format("%.1f", quantity / EgcTokenMultiplier)
-end
-
 function IsTimeUp(walletId, timestamp)
   if not Faucets[walletId] then
     return true
@@ -27,8 +28,8 @@ function IsTimeUp(walletId, timestamp)
   local faucet = Faucets[walletId];
   local lastTimestamp = faucet.lastTimestamp
   local timeDifference = timestamp - lastTimestamp
-  -- 假设我们设置每2小时（7200000秒）可以再次领取
-  return timeDifference > 7200000
+  -- 设置每1个农历月可以再次领取
+  return timeDifference > 3600000*24*29
 end
 
 Handlers.add(
@@ -45,26 +46,26 @@ Handlers.add(
           Target = ChatTarget,
           Tags = {
             Action = 'ChatMessage',
-            ['Author-Name'] = 'HourlyFaucet',
+            ['Author-Name'] = 'LunarMan',
             Recipient = sender,
           },
-          Data = "Please come back after Double-Hour. | 请过一个时辰再来，请记住：一个时辰是两个小时。",
+          Data = "Please come back after one Lunar-Month. | 请过一个月再来吧，是一个农历月哦，不到30天。",
         })
         return
       end
       -- 时间到了
       -- 更新赠送时间和金额
       Faucets[sender].lastTimestamp = msg.Timestamp
-      Faucets[sender].total = Faucets[sender].total + 1
+      Faucets[sender].total = Faucets[sender].total + RegularGift
       -- 写到聊天中
       Send({
         Target = ChatTarget,
         Tags = {
           Action = 'ChatMessage',
-          ['Author-Name'] = 'HourlyFaucet',
+          ['Author-Name'] = 'LunarMan',
           Recipient = sender,
         },
-        Data = "I'll give you 1 EGC, You can come back after Double-Hour.|送你 1 EGC，不要嫌少，过一个时辰还可以来拿哦。"
+        Data = "I'll give you 50 EGC, You can come back after one Lunar-Month.|送你 50 EGC，再过一个农历月，你还可以来找我。"
       })
       -- 发送EGC
       Send({
@@ -72,22 +73,22 @@ Handlers.add(
         Tags = {
           Action = 'Transfer',
           Recipient = sender,
-          Quantity = tostring(EgcFaucetSizeQuantity),
+          Quantity = tostring(RegularGiftQuantity),
         },
       })
     else
       -- 第一次见面
-      local faucet = { total = 66, lastTimestamp = msg.Timestamp }
+      local faucet = { total = 168, lastTimestamp = msg.Timestamp }
       --table.insert(Faucets, faucet)
       Faucets[sender] = faucet;
       Send({
         Target = ChatTarget,
         Tags = {
           Action = 'ChatMessage',
-          ['Author-Name'] = 'HourlyFaucet',
+          ['Author-Name'] = 'LunarMan',
           Recipient = sender,
         },
-        Data = "Nice to meet you. I'm giving you a welcome red envelope | 很高兴认识你，送你一个见面红包。"
+        Data = "Nice to meet you. I'm giving you a welcome red envelope | 很高兴认识你，送你一个见面大红包。"
       })
       -- 发送EGC
       Send({
@@ -95,7 +96,7 @@ Handlers.add(
         Tags = {
           Action = 'Transfer',
           Recipient = sender,
-          Quantity = "6600",
+          Quantity = tostring(FirstGiftQuantity),
         },
       })
     end
@@ -137,9 +138,9 @@ Handlers.add(
           Tags = { Type = 'Schema' },
           Data = json.encode({
             GetFaucet = {
-              Title = "Meeting is fate | 我们又相见了",
+              Title = "Meeting is fate | 相识是缘份",
               Description =
-              "I'm HourlyFaucet, You can take another EGC from me every double-hour. |我叫时时送，不要赚少，每隔一个时辰你就可以从我这里再拿一次币哦。",
+              "We meet again. Please accept my 50 EGC red envelope. | 我们又见面了，请收下我 50 EGC的红包。",
               Schema = {
                 Tags = json.decode(GetFaucetSchemaTags()),
                 -- Data
@@ -155,8 +156,8 @@ Handlers.add(
             Tags = { Type = 'Schema' },
             Data = json.encode({
               GetFaucet = {
-                Title = "Double-Hour is two hours!|一个时辰是两个小时！",
-                Description = "See you again so soon, Double-Hour is two hours | 这么快以相见了，请记住，一个时辰是两个小时哦！",
+                Title = "LunarMan with lunar gift!|月佬月佬月月佬！",
+                Description = "Remember, as long as you treat her well, I will give you another gift every lunar month! | 记得，只要对她好，每过一个农历月我会再给您礼物的！",
                 Schema = {
                   Tags = json.decode(GetFaucetSchemaTags()),
                   -- Data
@@ -173,9 +174,9 @@ Handlers.add(
           Tags = { Type = 'Schema' },
           Data = json.encode({
             GetFaucet = {
-              Title = "Meeting is fate | 相见是缘份",
+              Title = "I'm Lunar Man | 我是月月佬",
               Description =
-              "Nice to meet you. Here's a welcome gift for you, 66EGC. | 很高兴认识您，送您一个见面礼，有66EGC，祝您一切顺利。",
+              "My relative has a daughter who is not married yet. Please be friends with her and I will give you 168 EGC as a welcome gift. | 我的亲戚有个女儿还没有结婚，请跟她做个朋友吧，我会给你 168 EGC作为见面礼。",            
               Schema = {
                 Tags = json.decode(GetFaucetSchemaTags()),
                 -- Data

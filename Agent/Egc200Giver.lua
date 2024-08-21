@@ -50,7 +50,7 @@ function HasAlreadyDonated(walletId)
   return false
 end
 
-OutOfEgc = OutOfEgc or false
+OUT_OF_EGC = OUT_OF_EGC or false
 
 Handlers.add(
   "OutOfEgc",
@@ -78,7 +78,7 @@ Handlers.add(
       Data = "I seem to be out of EGC. Come back again later.|对不起，我的EGC花光了，请下次再来。",
     })
 
-    OutOfEgc = true
+    OUT_OF_EGC = true
   end
 )
 
@@ -92,7 +92,7 @@ Handlers.add(
 
     print("收到" .. msg.Tags.Quantity .. " EGC")
 
-    if (not OutOfEgc) then
+    if (not OUT_OF_EGC) then
       return
     end
 
@@ -106,7 +106,7 @@ Handlers.add(
       Data = "I have more EGC to give! | 我有EGC了！",
     })
 
-    OutOfEgc = false
+    OUT_OF_EGC = false
   end
 )
 
@@ -128,7 +128,7 @@ Handlers.add(
           ['Author-Name'] = 'EGC Giver|赠送',
           Recipient = sender,
         },
-        Data = "I rememember you! You can get more from someone else. | 我记得您已经在我这里领过币了，您可以到其他人那里再试试！",
+        Data = "I rememember you! You can get more from someone else. | 我记得您已经在我这里领过EGC了，您可以到其他人那里再试试！",
       })
       return
     end
@@ -168,7 +168,7 @@ Handlers.add(
 
 -- Schema
 
-function GetFaucetSchemaTags()
+function GetDonationSchemaTags()
   return [[
 {
 "type": "object",
@@ -193,7 +193,7 @@ Handlers.add(
     -- 查看数据库，看是否账号已经送出过EGC
     local walletId = msg.From
 
-    if (OutOfEgc) then
+    if (OUT_OF_EGC) then
       Send({
         Target = walletId,
         Tags = { Type = 'Schema' },
@@ -233,7 +233,7 @@ Handlers.add(
           Title = "Lucky for finding me! | 遇到我真幸运！",
           Description = "You have found me. Click below to recieve 200 EGC.|这是上辈子修来的福份，点击一下就能收到我送给你的200EGC。",
           Schema = {
-            Tags = json.decode(GetFaucetSchemaTags()),
+            Tags = json.decode(GetDonationSchemaTags()),
             -- Data
             -- Result?
           },
