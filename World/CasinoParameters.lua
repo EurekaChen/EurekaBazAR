@@ -6,13 +6,13 @@ RealityParameters = {
         Tileset = {
             Type = 'Fixed',
             Format = 'PNG',
-            TxId = 'xTqrNKwK0kC7mQPnsswY3Ox2x8f3NI1MHnTlJbW3264', -- TxId of the tileset in PNG format
+            TxId = 'vrgXqp7FjtK0Lcd8ZmVECTyJSssG-2BSIkcogiGkJ24', -- TxId of the tileset in PNG format
         },
         -- This is a tilemap of sample small island
         Tilemap = {
             Type = 'Fixed',
             Format = 'TMJ',
-            TxId = '6JjQlucvdxDMAw9vA971S8PmnK0fYj7rPvIBKlQr8hY',
+            TxId = 'M4YIGOHzXXRehNaBWWl5JZfFafhCxxtGr3mHaVYc38s',
         },
         PlayerSpriteTxId = 'Vz-aSCm6ULN6Sx7qq0pPGfuJQskYa5rRCW9q3vViPdo'
     },
