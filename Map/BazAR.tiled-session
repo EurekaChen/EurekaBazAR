@@ -36,6 +36,9 @@
         },
         "BazAR3.json#Primary": {
             "scaleInDock": 2
+        },
+        "EurekaBazAR2.json#Primary": {
+            "scaleInEditor": 1
         }
     },
     "last.imagePath": "E:/Current/Eureka/Web/aos.cool/Reality/BazAR",

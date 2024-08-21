@@ -61,7 +61,7 @@ RealityEntitiesStatic = {
         },
     },
     ['kRi973TXQnuxZWMjVgdmDMighkIwmHDCguggBin0ul8'] = {
-        Position = { 40, 57 },
+        Position = { 16, 7 },
         Type = 'Avatar',
         Metadata = {
             DisplayName = 'HourlyFaucet|时时送',
@@ -88,7 +88,7 @@ RealityEntitiesStatic = {
         Position = { 4, 26 },
         Type = 'Avatar',
         Metadata = {
-            DisplayName = "LunarMan|月月佬",
+            DisplayName = "LunarMan|月佬",
             SpriteTxId = 'wnJ9ofEDoJVpNVSL_kQdYIG-L_zM9vQDVsGRsOZE7Nk',
             Interaction = {
                 Type = "SchemaForm",
@@ -105,6 +105,18 @@ RealityEntitiesStatic = {
             Interaction = {
                 Type = "SchemaForm",
                 Id = "WeeklyFaucet",
+            }
+        }
+    },
+    ['vql1x9DeVjTEqgobAQJIhvc2rBtXzCv1NU0pQezQZxw'] = {
+        Position = { 57, 26 },
+        Type = 'Avatar',
+        Metadata = {
+            DisplayName = "Hemera|羲和",
+            SpriteTxId = 'IVGHyJjOenP4hcV1Kd_fW55myaesdP26uN7eQXLIYts',
+            Interaction = {
+                Type = "SchemaForm",
+                Id = "DailyFaucet",
             }
         }
     }
