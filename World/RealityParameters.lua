@@ -6,8 +6,7 @@ RealityParameters = {
         Tileset = {
             Type = 'Fixed',
             Format = 'PNG',
-            TxId = 'xTqrNKwK0kC7mQPnsswY3Ox2x8f3NI1MHnTlJbW3264',
-            --新 TxId = 'vrgXqp7FjtK0Lcd8ZmVECTyJSssG-2BSIkcogiGkJ24',
+            TxId = 'TDv3uHbQRnwShdoxGgPphpTdHe5e0EKmdJBX9vJqD4o',           
         },
         -- This is a tilemap of sample small island
         Tilemap = {
