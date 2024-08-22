@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "BazAR3.json",
+    "activeFile": "EurekaBazAR2.json",
     "expandedProjectPaths": [
         "."
     ],
@@ -41,8 +41,8 @@
             "scale": 2,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 268.75,
-                "y": 245.75
+                "x": 239.75,
+                "y": 239.75
             }
         },
         "Casino.json#Primary": {
@@ -52,8 +52,8 @@
             "scale": 1.3903645833333333,
             "selectedLayer": 9,
             "viewCenter": {
-                "x": 479.7302865705188,
-                "y": 480.08990447649364
+                "x": 385.8700131110695,
+                "y": 652.7064993444466
             }
         },
         "EurekaBazAR2.json#Primary": {
@@ -68,11 +68,14 @@
     "map.tileWidth": 16,
     "map.width": 60,
     "openFiles": [
-        "BazAR3.json"
+        "Casino.json",
+        "EurekaBazAR2.json"
     ],
     "project": "BazAR.tiled-project",
     "property.type": "bool",
     "recentFiles": [
+        "Casino.json",
+        "EurekaBazAR2.json",
         "BazAR3.json",
         "BazAR.json"
     ],
