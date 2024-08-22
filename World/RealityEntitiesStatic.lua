@@ -20,7 +20,7 @@ RealityEntitiesStatic = {
         Type = 'Avatar',
         Metadata = {
             DisplayName = 'Morpheus|墨菲斯',
-            SpriteTxId = '9XHy0pepYiAELKbP9eTHcby8Ft4lVP2qWUVfwYmoLnI',            
+            SpriteTxId = '9XHy0pepYiAELKbP9eTHcby8Ft4lVP2qWUVfwYmoLnI',
             Interaction = {
                 Type = 'Default',
             },
@@ -31,7 +31,7 @@ RealityEntitiesStatic = {
         Type = 'Avatar',
         Metadata = {
             DisplayName = 'GiverGuide|赠币向导',
-            SpriteTxId = 'MciyuI-s0xM1s_U7fMCfprHEGe1-W1mSaO7OuwNP-NY',            
+            SpriteTxId = 'MciyuI-s0xM1s_U7fMCfprHEGe1-W1mSaO7OuwNP-NY',
             Interaction = {
                 Type = 'Default',
             },
@@ -47,7 +47,7 @@ RealityEntitiesStatic = {
                 Type = 'Default',
             },
         },
-    },    
+    },
     ['Ru9kMtDMQ9bJrlZQ9TItoWUm9ejGOonXiJV3D6fm4ko'] = {
         Position = { 7, 46 },
         Type = 'Avatar',
@@ -119,5 +119,49 @@ RealityEntitiesStatic = {
                 Id = "DailyFaucet",
             }
         }
-    }
+    },
+    --参见：https://github.com/elliotsayes/Reality/blob/main/process/world/3_LlamaLand.lua
+    ['9a_YP6M7iN7b6QUoSvpoV3oe3CqxosyuJnraCucy5ss'] = {
+        Position = { 19, 59 },
+        Type = 'Hidden',
+        Metadata = {
+            Interaction = {
+                Type = 'Warp',
+                Size = { 6, 1 }
+            },
+        }
+    },
+    --参见：https://github.com/elliotsayes/Reality/blob/main/process/world/4_LlamaFed.lua
+    ['QIFgbqEmk5MyJy01wuINfcRP_erGNNbhqHRkAQjxKgg'] = {
+        Position = { 16, 0 },
+        Type = 'Hidden',
+        Metadata = {
+            Interaction = {
+                Type = 'Warp',
+                Size = { 3, 1 }
+            },
+        }
+    },
+    --参见：https://github.com/elliotsayes/Reality/blob/main/process/world/20_PalmIsland.lua
+    ['OqvzTvpHYrfswvVZdsSldVTNBnyBOk7kZf-oqDdvUjg'] = {
+        Position = { 59, 54 },
+        Type = 'Hidden',
+        Metadata = {
+            Interaction = {
+                Type = 'Warp',
+                Size = { 1, 5 }
+            },
+        }
+    },
+    --参见：https://github.com/elliotsayes/Reality/blob/main/process/world/21_RpgLand.lua
+    ['ZeDtHnbKThvHxN5NIudNRqtIlTle7KyGLQeiQTP1f_E'] = {
+        Position = { 59, 11 },
+        Type = 'Hidden',
+        Metadata = {
+            Interaction = {
+                Type = 'Warp',
+                Size = { 1, 5 }
+            },
+        }
+    },
 }
