@@ -206,7 +206,7 @@ Handlers.add(
     end
 
 
-    if msg.Data == "This game has ended" or msg.Data == "You have no active game, start one by sending a bet" then
+    if msg.Data == "This game has ended | 本局结束" or msg.Data == "You have no active game, start one by sending a bet | 您的牌局已结束，请下注开始新游戏" then
       local stateDescription
       if msg.State then
         local state = json.decode(msg.State)
@@ -222,15 +222,15 @@ Handlers.add(
 
 
         stateDescription = string.format(
-          "Dealer's Hand|庄家牌: %s (Value: %d)\nYour Hand|你的牌: %s (Value: %d)\n\n%s",
+          "Dealer's Hand|庄家牌: %s (Value: %d)\nYour Hand|您的牌: %s (点数: %d)\n\n%s",
           formatHand(dealerHand),
           tonumber(dealerValue),
           formatHand(playerHand),
           tonumber(playerValue),
-          "This game has ended. Start a new game by transferring 1 $Llama.|本局结束，请转1$Llama开始新游戏"
+          "This game has ended. Start a new game by transferring 1 $Llama.|本局结束，请转 1 $Llama 开始新游戏"
         )
       else
-        stateDescription = msg.Data .. " Start a new game by transferring 1 $Llama|请转1$Llama开始新游戏"
+        stateDescription = msg.Data .. " Start a new game by transferring 1 $Llama|请转 1 $Llama 开始新游戏"
       end
 
 
@@ -269,7 +269,7 @@ Handlers.add(
       local playerValue = calculateHandValue(playerHand)
 
       local description = string.format(
-        "Dealer's Hand|庄家牌: %s (Value: %d)\nYour Hand|你的牌: %s (Value: %d)",
+        "Dealer's Hand|庄家牌: %s (Value: %d)\nYour Hand|您的牌: %s (点数: %d)",
         formatHand(dealerHand),
         tonumber(dealerValue),
         formatHand(playerHand),
@@ -296,7 +296,7 @@ Handlers.add(
       if not state.isHistoric then
         chatMessage = truncatedAccount .. " current game status|当前的游戏状态: " .. description
       else
-        chatMessage = truncatedAccount .. " final state of last game|最后游戏状态: " .. description
+        chatMessage = truncatedAccount .. " final state of last game|最后的游戏状态: " .. description
       end
 
 

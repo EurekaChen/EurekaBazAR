@@ -37,12 +37,12 @@ RealityEntitiesStatic = {
             },
         },
     },
-    ['DaPNHtXMTRek4De_aG7DnX2Ef6UkEyN6UVgSJwYE7EU'] = {
-        Position = { 16, 38 },
+    ['35gCxPNDn7h4S_-hDDOkJGq3RMcgtDP_Ht8YFwlUo14'] = {
+        Position = { 37, 31 },
         Type = 'Avatar',
         Metadata = {
-            DisplayName = 'Upload|上传者',
-            SkinNumber = 2,
+            DisplayName = 'Helix|海利克斯',
+            SpriteTxId = 'xn5cvLuwcxU6Gfu4urbhlETyHQBcQzzZtl3HQzvQPME',
             Interaction = {
                 Type = 'Default',
             },
