@@ -16,6 +16,14 @@ RealityEntitiesStatic = {
             SpriteTxId = 'cW46ihERwiFlhxkgrATN5-muPPqupVH_Gw_hp1QiIRQ',
         },
     },
+    ['Profile'] = {
+        Type = 'Avatar',
+        Position = { 28, 25 },
+        Metadata = {
+            DisplayName = 'Profile|档案',
+            SpriteTxId = 'L1QugCnakGC5G9uoc2HOIALCYHSyRDBiXNwQ03nJ8dw',
+        },
+    },
     ['Ticket'] = {
         Type = 'Avatar',
         Position = { 22, 44 },
