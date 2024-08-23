@@ -1,13 +1,22 @@
 RealityEntitiesStatic = {
-    ['Npc1'] = {
+
+    ['Banker'] = {
         Type = 'Avatar',
-        Position = { 42, 46 },
+        Position = { 44, 42 },
         Metadata = {
-            DisplayName = 'Manager|经理',
-            SpriteTxId = '0WFjH89wzK8XAA1aLPzBBEUQ1uKpQe9Oz_pj8x1Wxpc',
+            DisplayName = 'Banker|银行职员',
+            SpriteTxId = '-DTj0CuLcfxHk7f_eZ1B2-PVS1qKWuj5SbO0-KGO7S0',
         },
     },
-    ['Npc2'] = {
+    ['Trader'] = {
+        Type = 'Avatar',
+        Position = { 38, 44 },
+        Metadata = {
+            DisplayName = 'Trader|代币兑换',
+            SpriteTxId = 'cW46ihERwiFlhxkgrATN5-muPPqupVH_Gw_hp1QiIRQ',
+        },
+    },
+    ['Ticket'] = {
         Type = 'Avatar',
         Position = { 22, 44 },
         Metadata = {
@@ -76,7 +85,7 @@ RealityEntitiesStatic = {
         Position = { 23, 33 },
         Type = 'Avatar',
         Metadata = {
-            DisplayName = "BlackJack|21点",
+            DisplayName = "Blackjack|21点",
             SpriteTxId = 'sfd6xuVX0QHhxcgWTzYtaeWfIl2z2WpWFtg3tK2dYV4',
             Interaction = {
                 Type = "SchemaExternalForm",
