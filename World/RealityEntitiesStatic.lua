@@ -16,7 +16,7 @@ RealityEntitiesStatic = {
             SpriteTxId = 'cW46ihERwiFlhxkgrATN5-muPPqupVH_Gw_hp1QiIRQ',
         },
     },
-    ['Profile'] = {
+    ['xP2GsrL2RzNtH0BEQyczxI__8bI90u73f3m3aLz0NSU'] = {
         Type = 'Avatar',
         Position = { 28, 25 },
         Metadata = {
