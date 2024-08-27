@@ -1,4 +1,5 @@
 # 易易市场（Eureka BazAR）
+[English](./README.md) | [简体中文](./README.zh.md)
 
 体验该游戏，请访问 https://bz.aos.cool/
 

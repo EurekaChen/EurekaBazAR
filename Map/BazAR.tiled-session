@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "EurekaBazAR.json",
+    "activeFile": "Casino.json",
     "expandedProjectPaths": [
         "."
     ],
@@ -41,7 +41,7 @@
             "scale": 2,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 283.75,
+                "x": 283.5,
                 "y": 210.5
             }
         },
@@ -90,14 +90,15 @@
     "map.tileWidth": 16,
     "map.width": 60,
     "openFiles": [
-        "EurekaBazAR.json"
+        "EurekaBazAR.json",
+        "Casino.json"
     ],
     "project": "BazAR.tiled-project",
     "property.type": "bool",
     "recentFiles": [
         "EurekaBazAR.json",
-        "EurekaBazAR2.json",
         "Casino.json",
+        "EurekaBazAR2.json",
         "Ticket.json",
         "BazAR3.json",
         "BazAR.json"
